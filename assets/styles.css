@@ -1,11 +1,24 @@
+/* Webfont: PostNoBillsColombo-Bold */@font-face {
+    font-family: 'PostNoBillsColombo';
+    src: url('PostNoBillsColombo-Bold.eot'); /* IE9 Compat Modes */
+    src: url('PostNoBillsColombo-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PostNoBillsColombo-Bold.woff') format('woff'), /* Modern Browsers */
+         url('PostNoBillsColombo-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('PostNoBillsColombo-Bold.svg#PostNoBillsColombo-Bold') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
+
 body {
     background: #fefff7;
 font-family: 'Zilla Slab', serif;
 
 }
 h1 {
-    font-family: 'Montserrat', sans-serif;
-
+    font-family: 'PostNoBillsColombo';
+    color: red;
 }
 
 h2 {
