@@ -1,21 +1,24 @@
-/* Webfont: PostNoBillsColombo-Bold */@font-face {
+/* Webfont: PostNoBillsColombo-Bold */
+
+@font-face {
     font-family: 'PostNoBillsColombo';
-    src: url('PostNoBillsColombo-Bold.eot'); /* IE9 Compat Modes */
+    src: url('PostNoBillsColombo-Bold.eot');
+    /* IE9 Compat Modes */
     src: url('PostNoBillsColombo-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('PostNoBillsColombo-Bold.woff') format('woff'), /* Modern Browsers */
-         url('PostNoBillsColombo-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('PostNoBillsColombo-Bold.svg#PostNoBillsColombo-Bold') format('svg'); /* Legacy iOS */
+    url('PostNoBillsColombo-Bold.woff') format('woff'), /* Modern Browsers */
+    url('PostNoBillsColombo-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('PostNoBillsColombo-Bold.svg#PostNoBillsColombo-Bold') format('svg');
+    /* Legacy iOS */
     font-style: normal;
     font-weight: bold;
     text-rendering: optimizeLegibility;
 }
 
-
 body {
     background: #fefff7;
-font-family: 'Zilla Slab', serif;
-
+    font-family: 'Zilla Slab', serif;
 }
+
 h1 {
     font-family: 'PostNoBillsColombo';
     color: red;
@@ -27,13 +30,34 @@ h2 {
     margin-bottom: 1em;
 }
 
-b{
+b {
     font-weight: 700;
 }
 
 p {
-font-size: 1em;
-line-height: 1.5;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.btn {
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  color: #ffffff;
+  font-size: 14px;
+  background: #4a5963;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
 }
 
 #paper {
