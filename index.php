@@ -37,6 +37,12 @@
                   </td>
                 </tr>
                 <tr>
+                  <td>Your Mobile Number:</td>
+                  <td>
+                    <input type="text" name="senderMobileNumber" required="" placeholder=" 0713-323265">
+                  </td>
+                </tr>
+                <tr>
                   <td>Your Mobile Operator</td>
                   <td>
                     <select name="mobileOperator" required="">
@@ -71,7 +77,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
@@ -81,22 +88,32 @@
         var frm = this;
 
         var options = [];
-        options.push(this.optionSms.value);
-        options.push(this.optionCalls.value);
+        if (this.optionSms.checked) {
+          options.push(this.optionSms.value);
+        }
+        if (this.optionCalls.checked) {
+          options.push(this.optionCalls.value);
+        }
 
-        $.post("ajax.php?route=email",
-        {
-            senderName: this.senderName.value,
-            senderEmail: this.senderEmail.value,
-            operator: this.mobileOperator.value,
-            options: options
-        },
-        function(data, status){
-            if (status === 'success') {
-                alert('Your message has been sent!.');
-                frm.reset();
-            }
-        });
+        var data = {
+          senderName: this.senderName.value,
+          senderEmail: this.senderEmail.value,
+          senderMobileNumber: this.senderMobileNumber.value,
+          operator: this.mobileOperator.value,
+          options: options.join('|')
+        };
+
+        console.log(data);
+
+        $.post("ajax.php?route=email", data,
+          function(response, status){
+              if (status === 'success') {
+                console.log(response);
+                // alert('Your message has been sent!.');
+                // frm.reset();
+              }
+          }
+        );
       });
     </script>
   </body>
