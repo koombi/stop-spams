@@ -103,14 +103,11 @@
           options: options.join('|')
         };
 
-        console.log(data);
-
         $.post("ajax.php?route=email", data,
           function(response, status){
               if (status === 'success') {
-                console.log(response);
-                // alert('Your message has been sent!.');
-                // frm.reset();
+                alert('Your message has been sent!.');
+                frm.reset();
               }
           }
         );
